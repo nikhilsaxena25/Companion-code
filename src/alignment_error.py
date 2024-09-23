@@ -14,7 +14,7 @@ def load_data(filepath: str) -> pd.DataFrame:
     Returns
     -------
     pandas.DataFrame
-        A dataframe with columns 'measure', 'live', and 'ref'.
+        A dataframe with columns 'measure', 'ref', and 'live'.
     
     Raises
     ------
@@ -25,7 +25,7 @@ def load_data(filepath: str) -> pd.DataFrame:
     df = pd.read_excel(filepath)
 
     # Ensure the required columns are present
-    required_columns = ['measure', 'live', 'ref']
+    required_columns = ['measure', 'ref', 'live']
     if not all(col in df.columns for col in required_columns):
         raise ValueError(f"Missing one or more required columns: {required_columns}")
 
